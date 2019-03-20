@@ -4,7 +4,7 @@ import { heightPercentageToDP } from '../../../utils/responsive';
 
 export const Container = styled.View`
 	flex: 1;
-	margin-top: ${heightPercentageToDP('10%')};
+	padding-top: ${heightPercentageToDP('10%')};
 	align-items: center;
 	background-color: #FFFFFF;
 `

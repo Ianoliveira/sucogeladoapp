@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Text, ContainerInput } from './style';
 import Button from '../../atoms/button/button';
 import TextInput from '../../atoms/Input/input';
+import SocialLoginButtons from '../../atoms/SocialLogins/Buttons';
 
 export default class LoginTemplate extends Component {
 	state = {
@@ -19,6 +20,8 @@ export default class LoginTemplate extends Component {
 				</ContainerInput>
 
 				<Button text='Login' func={() => console.warn(`[LOGIN] ${this.state.textInputOne}\n[PASSWORD] ${this.state.textInputTwo}`)} />
+
+				<SocialLoginButtons />
 			</Container>
 		);
 	}
