@@ -1,0 +1,22 @@
+LoginScreen:
+	✔ Login Button @done(19-03-20 00:14)
+	☐ Login Title
+	☐ Input Username
+	☐ Input Password
+	☐ Button Login Google
+	☐ Button Login Facebook
+	☐ Button Login Twitter
+	☐ Button Login Forgot Password
+	☐ Button Create new Account
+
+Create New Account:
+	☐ Create Title
+	☐ Input Name
+	☐ Input Email
+	☐ Input phone
+	☐ Input Password
+	☐ Register Button
+	☐ Button Login Google
+	☐ Button Login Facebook
+	☐ Button Login Twitter
+	☐ Button Already have an account
