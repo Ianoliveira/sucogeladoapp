@@ -40,7 +40,7 @@ const TopBarNavigation = createMaterialTopTabNavigator({
 );
 
 /* any other route you want to render under the tab bar */
-const Navigator = createStackNavigator({
+const HomeStack = createStackNavigator({
 	Home: { screen: TopBarNavigation },
 },
 	{
@@ -65,8 +65,9 @@ const Navigator = createStackNavigator({
 
 //If you want to render more screens on bottom tab just add them here
 const TabNavigator = createBottomTabNavigator({
-	Home: Navigator,
-	Test: Navigator,
+	Home: HomeStack,
+	Cart: { screen: LoginScreen },
+	Profile: { screen: HomeScreen },
 }, {
 		defaultNavigationOptions: ({ navigation }) => ({
 			tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -77,12 +78,19 @@ const TabNavigator = createBottomTabNavigator({
 					iconName = 'home';
 					color = focused ? '#A7BBDB' : '#D3D8E0';
 				}
+				if (routeName === 'Cart') {
+					iconName = 'shopping-cart';
+					color = focused ? '#A7BBDB' : '#D3D8E0';
+				}
+				if (routeName === 'Profile') {
+					iconName = 'user';
+					color = focused ? '#A7BBDB' : '#D3D8E0';
+				}
+
 				return (<Icon name={iconName} size={25} color={color} />)
 			}
 		}),
 		tabBarOptions: {
-			activeTintColor: '#A7BBDB',
-			inactiveTintColor: '#D3D8E0',
 			showLabel: false,
 			style: {
 				elevation: 0,

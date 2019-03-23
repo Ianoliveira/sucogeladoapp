@@ -11,9 +11,6 @@ export default class LoginTemplate extends Component {
 		textInputTwo: ''
 	}
 
-
-
-
 	render() {
 		return (
 			<Container>
@@ -23,7 +20,7 @@ export default class LoginTemplate extends Component {
 					<TextInput placeholder='Senha' password={true} value={this.state.textInputTwo} onChangeText={(textInputTwo) => this.setState({ textInputTwo })} />
 				</ContainerInput>
 
-				<Button text='Login' func={() => console.warn(`[LOGIN] ${this.state.textInputOne}\n[PASSWORD] ${this.state.textInputTwo}`)} />
+				<Button text='Login' func={() => console.warn(`[LOGIN] ${this.state.textInputOne}\n[PASSWORD] ${this.state.textInputTwo}`)} width={90} height={6} border={40} />
 
 				<SocialLoginButtons />
 
