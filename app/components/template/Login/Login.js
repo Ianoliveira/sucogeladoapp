@@ -11,6 +11,9 @@ export default class LoginTemplate extends Component {
 		textInputTwo: ''
 	}
 
+
+
+
 	render() {
 		return (
 			<Container>
