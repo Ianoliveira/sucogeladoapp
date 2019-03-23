@@ -12,6 +12,7 @@
     "react-native": "0.59.1",
     "react-native-gesture-handler": "~1.0.14",
     "react-native-linear-gradient": "^2.5.4",
+    "react-native-swiper": "^1.5.14",
     "react-navigation": "^3.5.1",
     "styled-components": "^4.1.3"
   },
