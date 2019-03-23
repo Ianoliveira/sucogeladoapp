@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Text, ContainerInput } from './style';
+import { Container, Text, ContainerInput, TextButton, BottomButtonContainer } from './style';
+import { TouchableOpacity } from 'react-native';
 import Button from '../../atoms/button/button';
 import TextInput from '../../atoms/Input/input';
 import SocialLoginButtons from '../../atoms/SocialLogins/Buttons';
@@ -22,6 +23,16 @@ export default class LoginTemplate extends Component {
 				<Button text='Login' func={() => console.warn(`[LOGIN] ${this.state.textInputOne}\n[PASSWORD] ${this.state.textInputTwo}`)} />
 
 				<SocialLoginButtons />
+
+				<BottomButtonContainer>
+					<TouchableOpacity>
+						<TextButton>Esqueceu a senha?</TextButton>
+					</TouchableOpacity>
+
+					<TouchableOpacity>
+						<TextButton>Esqueceu a senha?</TextButton>
+					</TouchableOpacity>
+				</BottomButtonContainer>
 			</Container>
 		);
 	}

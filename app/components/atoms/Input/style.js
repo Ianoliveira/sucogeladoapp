@@ -7,11 +7,12 @@ export const TextInput = styled.TextInput`
 	margin: 0;
 	padding: 0;
 	margin-bottom: ${heightPercentageToDP('1%')};
+	font-weight: 200;
 `
 
 export const View = styled.View`
 	border-bottom-color: #939393;
-	border-bottom-width: 1;
+	border-bottom-width: .3;
 	margin-bottom: 10;
 	width: ${widthPercentageToDP('90%')};
 	margin-bottom: ${heightPercentageToDP('5%')};
