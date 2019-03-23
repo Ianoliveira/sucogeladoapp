@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator, createSwitchNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import normalize from '../app/utils/normalizeFont';
 
@@ -6,7 +7,7 @@ import normalize from '../app/utils/normalizeFont';
 import HomeScreen from '../app/components/template/Home/Home';
 import LoginScreen from '../app/components/template/Login/Login';
 
-/* any other route you want to render above the tab bar */
+/* any other route you want to render without the tab bar and Header bar */
 const Stack = createStackNavigator({
 	Login: { screen: LoginScreen }
 }, {
@@ -16,9 +17,10 @@ const Stack = createStackNavigator({
 	}
 );
 
+// any screen that you wnat to render in top tab bar
 const TopBarNavigation = createMaterialTopTabNavigator({
 	Sucos: { screen: HomeScreen },
-	Vitaminas: { screen: HomeScreen },
+	Vitaminas: { screen: LoginScreen },
 	Smoothies: { screen: HomeScreen },
 }, {
 		tabBarOptions: {
@@ -44,12 +46,14 @@ const Navigator = createStackNavigator({
 	{
 		initialRouteName: 'Home',
 		defaultNavigationOptions: {
+			title: 'Suco Gelado',
+			headerRight: <Icon name='bell' size={25} color={'#D3D8E0'} style={{ marginRight: 15 }} />,
+			headerLeft: <React.Fragment />,
 			headerStyle: {
 				backgroundColor: '#fff',
 				elevation: 0,       //remove shadow on Android
 				shadowOpacity: 0,   //remove shadow on iOS
 			},
-			title: 'Suco Gelado',
 			headerTintColor: '#A4A4A4',
 			headerTitleStyle: {
 				fontSize: 14,
@@ -59,11 +63,33 @@ const Navigator = createStackNavigator({
 		}
 	});
 
-
-
+//If you want to render more screens on bottom tab just add them here
 const TabNavigator = createBottomTabNavigator({
 	Home: Navigator,
-})
+	Test: Navigator,
+}, {
+		defaultNavigationOptions: ({ navigation }) => ({
+			tabBarIcon: ({ focused, horizontal, tintColor }) => {
+				const { routeName } = navigation.state;
+				let iconName;
+				let color;
+				if (routeName === 'Home') {
+					iconName = 'home';
+					color = focused ? '#A7BBDB' : '#D3D8E0';
+				}
+				return (<Icon name={iconName} size={25} color={color} />)
+			}
+		}),
+		tabBarOptions: {
+			activeTintColor: '#A7BBDB',
+			inactiveTintColor: '#D3D8E0',
+			showLabel: false,
+			style: {
+				elevation: 0,
+				shadowOpacity: 0
+			}
+		}
+	})
 
 const AppNavigator = createSwitchNavigator({
 	Home: TabNavigator,
