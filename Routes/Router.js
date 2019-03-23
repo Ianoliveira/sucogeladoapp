@@ -6,10 +6,14 @@ import normalize from '../app/utils/normalizeFont';
 //ALterar para a rota das pages
 import HomeScreen from '../app/components/template/Home/Home';
 import LoginScreen from '../app/components/template/Login/Login';
+import SplashScreen from '../app/components/template/Swiper/Swiper';
+import SingupScreen from '../app/components/template/Singup/Singup';
 
 /* any other route you want to render without the tab bar and Header bar */
 const Stack = createStackNavigator({
-	Login: { screen: LoginScreen }
+	Splash: { screen: SplashScreen },
+	Login: { screen: LoginScreen },
+	Singup: { screen: SingupScreen }
 }, {
 		defaultNavigationOptions: {
 			header: null
@@ -20,12 +24,13 @@ const Stack = createStackNavigator({
 // any screen that you wnat to render in top tab bar
 const TopBarNavigation = createMaterialTopTabNavigator({
 	Sucos: { screen: HomeScreen },
-	Vitaminas: { screen: LoginScreen },
+	Vitaminas: { screen: HomeScreen },
 	Smoothies: { screen: HomeScreen },
 }, {
 		tabBarOptions: {
 			activeTintColor: '#676767',
 			inactiveTintColor: '#D0D0D0',
+			upperCaseLabel: false,
 			indicatorStyle: {
 				backgroundColor: 'transparent',
 			},
@@ -66,7 +71,7 @@ const HomeStack = createStackNavigator({
 //If you want to render more screens on bottom tab just add them here
 const TabNavigator = createBottomTabNavigator({
 	Home: HomeStack,
-	Cart: { screen: LoginScreen },
+	Cart: Stack,
 	Profile: { screen: HomeScreen },
 }, {
 		defaultNavigationOptions: ({ navigation }) => ({
@@ -100,8 +105,8 @@ const TabNavigator = createBottomTabNavigator({
 	})
 
 const AppNavigator = createSwitchNavigator({
+	Login: Stack,
 	Home: TabNavigator,
-	Auth: Stack,
 })
 
 export default createAppContainer(AppNavigator);
