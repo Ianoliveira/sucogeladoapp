@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Login from '../components/template/Login/Login';
+import Screen from '../components/template/Singup/Singup';
 
 export default class App extends Component {
 	render() {
 		return (
-			<Login />
+			<Screen />
 		);
 	}
 }
