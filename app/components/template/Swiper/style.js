@@ -15,3 +15,9 @@ export const Text = styled.Text`
 	width: ${widthPercentageToDP('80%')};
 	text-align: center;
 `
+
+export const Jump = styled.TouchableOpacity`
+	color: #A5A5A5;
+	align-self: center;
+	margin-bottom: 10;
+`

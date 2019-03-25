@@ -20,7 +20,7 @@ export default class LoginTemplate extends Component {
 					<TextInput placeholder='Senha' password={true} value={this.state.textInputTwo} onChangeText={(textInputTwo) => this.setState({ textInputTwo })} />
 				</ContainerInput>
 
-				<Button text='Login' func={() => console.warn(`[LOGIN] ${this.state.textInputOne}\n[PASSWORD] ${this.state.textInputTwo}`)} />
+				<Button text='Login' func={() => this.props.navigation.navigate('Home')} width={90} height={6} border={40} />
 
 				<SocialLoginButtons />
 
@@ -29,8 +29,8 @@ export default class LoginTemplate extends Component {
 						<TextButton>Esqueceu a senha?</TextButton>
 					</TouchableOpacity>
 
-					<TouchableOpacity>
-						<TextButton>Esqueceu a senha?</TextButton>
+					<TouchableOpacity onPress={() => this.props.navigation.navigate('Singup')}>
+						<TextButton>Cadastrar nova Conta?</TextButton>
 					</TouchableOpacity>
 				</BottomButtonContainer>
 			</Container>

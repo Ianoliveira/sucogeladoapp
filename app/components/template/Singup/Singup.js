@@ -16,7 +16,7 @@ class SingUp extends Component {
 					<Input placeholder='Celular' password={false} onChangeText={console.warn('ola')} />
 					<Input placeholder='Crie uma Senha' password={true} onChangeText={console.warn('ola')} />
 				</ContainerInput>
-				<Button text='Registre' />
+				<Button text='Registre' func={() => this.props.navigation.navigate('Home')} width={90} height={6} border={40} />
 				<SocialLogins />
 
 				<BottomButton>
