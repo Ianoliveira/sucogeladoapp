@@ -107,7 +107,6 @@ const TabNavigator = createBottomTabNavigator({
 	})
 
 const AppNavigator = createSwitchNavigator({
-	Test: { screen: ProductViewScreen },
 	Login: Stack,
 	Home: TabNavigator,
 })

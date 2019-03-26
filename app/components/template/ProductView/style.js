@@ -41,3 +41,18 @@ export const TextPrice = styled.Text`
 	color: #fff;
 	font-weight: bold;
 `
+
+export const RateContainer = styled.View`
+	flex-direction: row;
+	width: ${widthPercentageToDP('40%')};
+	justify-content: space-around;
+	margin-bottom: ${heightPercentageToDP('1%')};
+`
+export const RateStar = styled.Image`
+	width: ${widthPercentageToDP('6%')};
+`
+
+export const RateText = styled.Text`
+	font-size: ${normalize(10)};
+	color: #959595;
+`
