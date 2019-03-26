@@ -8,6 +8,7 @@ import HomeScreen from '../app/components/template/Home/Home';
 import LoginScreen from '../app/components/template/Login/Login';
 import SplashScreen from '../app/components/template/Swiper/Swiper';
 import SingupScreen from '../app/components/template/Singup/Singup';
+import ProductViewScreen from '../app/components/template/ProductView/ProductView'
 
 /* any other route you want to render without the tab bar and Header bar */
 const Stack = createStackNavigator({
@@ -47,6 +48,7 @@ const TopBarNavigation = createMaterialTopTabNavigator({
 /* any other route you want to render under the tab bar */
 const HomeStack = createStackNavigator({
 	Home: { screen: TopBarNavigation },
+	ProductView: { screen: ProductViewScreen }
 },
 	{
 		initialRouteName: 'Home',
@@ -105,6 +107,7 @@ const TabNavigator = createBottomTabNavigator({
 	})
 
 const AppNavigator = createSwitchNavigator({
+	Test: { screen: ProductViewScreen },
 	Login: Stack,
 	Home: TabNavigator,
 })
